@@ -10,5 +10,5 @@ export const handleSummon = async (message: Message<boolean>) => {
     })
     return
   }
-  summon(member)
+  return summon(member)
 }
