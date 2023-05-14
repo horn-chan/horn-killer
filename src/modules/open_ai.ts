@@ -26,5 +26,12 @@ export const createCompletion = async (prompt: string, option: ChatOption) => {
       }
     ]
   })
-  return completion.data.choices[0].message
+    .then((completion) => completion.data.choices[0].message)
+    .catch((e) => (console.log({
+      content: null,
+      status: e.response.status,
+      statusText: e.response.statusText,
+      message: e.response.data.error.message
+    })))
+  return completion
 }
