@@ -13,7 +13,7 @@ type ChatOption = {
 
 export const createCompletion = async (prompt: string, option: ChatOption) => {
   const completion = await openai.createChatCompletion({
-    model: 'gpt-3.5-turbo',
+    model: option.model || 'gpt-3.5-turbo',
     messages: [
       {
         role: 'system',
