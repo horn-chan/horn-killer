@@ -1,5 +1,7 @@
 import { AudioPlayer } from '@discordjs/voice'
 
+type guildId = string;
+
 export const store = {
-  players: [] as AudioPlayer[]
+  players: new Map() as Map<guildId, AudioPlayer>
 }
