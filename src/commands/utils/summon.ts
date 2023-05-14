@@ -6,13 +6,12 @@ export const summon = (member: GuildMember) => {
   const voiceChannel = member?.voice.channel
 
   if (!voiceChannel) {
-    return false
+    return null
   }
 
-  joinVoiceChannel({
+  return joinVoiceChannel({
     channelId: voiceChannel.id,
     guildId: voiceChannel.guild.id,
     adapterCreator: voiceChannel.guild.voiceAdapterCreator
   })
-  return true
 }
